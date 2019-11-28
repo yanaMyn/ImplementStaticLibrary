@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zxz-w7-En2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1543" y="54"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bLI-Mk-6hq">
+            <objects>
+                <viewController id="zxz-w7-En2" customClass="ViewController" customModule="SingleProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pud-pI-9u6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Afm-AY-0eE">
+                                <rect key="frame" x="30" y="94" width="354" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rle-Im-rt0">
+                                        <rect key="frame" x="0.0" y="0.0" width="172" height="50"/>
+                                        <color key="backgroundColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Get">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getTapped:" destination="zxz-w7-En2" eventType="touchUpInside" id="7Se-hZ-Ymq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAD-Ky-HpU">
+                                        <rect key="frame" x="182" y="0.0" width="172" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Post">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="postTapped:" destination="zxz-w7-En2" eventType="touchUpInside" id="W8I-G2-URt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="m4v-3q-NBh"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C7E-l3-NlE">
+                                <rect key="frame" x="30" y="174" width="354" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9Q-rd-Ldq">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="50"/>
+                                        <color key="backgroundColor" red="0.32674439867772254" green="0.74032279003313828" blue="0.95085816059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Download">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="downloadTapped:" destination="zxz-w7-En2" eventType="touchUpInside" id="gtg-R5-wBg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge3-Ij-RzJ">
+                                        <rect key="frame" x="121.5" y="0.0" width="111" height="50"/>
+                                        <color key="backgroundColor" red="0.88380281689999995" green="0.2385162076" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Pause">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pauseDwonload:" destination="zxz-w7-En2" eventType="touchUpInside" id="hT0-cS-QFX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44v-wK-Ac5">
+                                        <rect key="frame" x="242.5" y="0.0" width="111.5" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6705882353" blue="0.3575578009" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Resume">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resumeDownload:" destination="zxz-w7-En2" eventType="touchUpInside" id="LWO-7S-gmH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bKn-8F-crF"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q7S-Uf-tSM">
+                                <rect key="frame" x="30" y="254" width="354" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OW-7J-iDg">
+                                        <rect key="frame" x="0.0" y="0.0" width="172" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Select photo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="selectPhotoTapped:" destination="zxz-w7-En2" eventType="touchUpInside" id="iaS-t2-fOW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-ck-cf6">
+                                        <rect key="frame" x="182" y="0.0" width="172" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6705882353" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Upload">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="uploadTapped:" destination="zxz-w7-En2" eventType="touchUpInside" id="GUh-2a-320"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MxA-jW-zSK"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJl-q6-ttz">
+                                <rect key="frame" x="207" y="339" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7aW-3b-hWw">
+                                <rect key="frame" x="30" y="344" width="354" height="2"/>
+                            </progressView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iXl-tv-ZMK">
+                                <rect key="frame" x="30" y="366" width="354" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="hiP-YZ-8XW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Afm-AY-0eE" firstAttribute="leading" secondItem="C7E-l3-NlE" secondAttribute="leading" id="49C-AV-dHh"/>
+                            <constraint firstItem="C7E-l3-NlE" firstAttribute="trailing" secondItem="Q7S-Uf-tSM" secondAttribute="trailing" id="4Cb-yc-OpO"/>
+                            <constraint firstItem="Afm-AY-0eE" firstAttribute="top" secondItem="rOg-8s-psb" secondAttribute="top" constant="50" id="BDD-On-bii"/>
+                            <constraint firstItem="7aW-3b-hWw" firstAttribute="trailing" secondItem="Q7S-Uf-tSM" secondAttribute="trailing" id="FNw-bV-hxx"/>
+                            <constraint firstItem="7aW-3b-hWw" firstAttribute="top" secondItem="BJl-q6-ttz" secondAttribute="bottom" constant="5" id="IuK-q7-6Jo"/>
+                            <constraint firstItem="iXl-tv-ZMK" firstAttribute="trailing" secondItem="Q7S-Uf-tSM" secondAttribute="trailing" id="O52-My-V6j"/>
+                            <constraint firstItem="Q7S-Uf-tSM" firstAttribute="top" secondItem="C7E-l3-NlE" secondAttribute="bottom" constant="30" id="R0A-tU-hcv"/>
+                            <constraint firstItem="BJl-q6-ttz" firstAttribute="centerX" secondItem="7aW-3b-hWw" secondAttribute="centerX" id="T7F-kU-FLU"/>
+                            <constraint firstItem="Q7S-Uf-tSM" firstAttribute="leading" secondItem="rOg-8s-psb" secondAttribute="leading" constant="30" id="YGC-84-qMB"/>
+                            <constraint firstItem="7aW-3b-hWw" firstAttribute="leading" secondItem="Q7S-Uf-tSM" secondAttribute="leading" id="cXL-x0-hew"/>
+                            <constraint firstItem="C7E-l3-NlE" firstAttribute="top" secondItem="Afm-AY-0eE" secondAttribute="bottom" constant="30" id="eVH-Vf-z9l"/>
+                            <constraint firstItem="iXl-tv-ZMK" firstAttribute="top" secondItem="7aW-3b-hWw" secondAttribute="bottom" constant="20" id="gSb-fk-IOh"/>
+                            <constraint firstItem="7aW-3b-hWw" firstAttribute="top" secondItem="Q7S-Uf-tSM" secondAttribute="bottom" constant="40" id="i3K-cD-wPI"/>
+                            <constraint firstItem="C7E-l3-NlE" firstAttribute="leading" secondItem="Q7S-Uf-tSM" secondAttribute="leading" id="oe6-FZ-rwe"/>
+                            <constraint firstItem="iXl-tv-ZMK" firstAttribute="leading" secondItem="Q7S-Uf-tSM" secondAttribute="leading" id="pPe-B7-dvd"/>
+                            <constraint firstItem="Afm-AY-0eE" firstAttribute="trailing" secondItem="C7E-l3-NlE" secondAttribute="trailing" id="vJY-xs-V0l"/>
+                            <constraint firstItem="rOg-8s-psb" firstAttribute="trailing" secondItem="Q7S-Uf-tSM" secondAttribute="trailing" constant="30" id="xl1-np-ayH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rOg-8s-psb"/>
+                    </view>
+                    <connections>
+                        <outlet property="img" destination="iXl-tv-ZMK" id="UwQ-hd-dkY"/>
+                        <outlet property="percentLabel" destination="BJl-q6-ttz" id="bSl-MX-479"/>
+                        <outlet property="progress" destination="7aW-3b-hWw" id="nNH-3I-hGz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fq-du-W9J" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="119"/>
+        </scene>
+    </scenes>
+</document>

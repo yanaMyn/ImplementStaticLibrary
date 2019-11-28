@@ -1,0 +1,158 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name LACoreNetwork
+import Foundation
+import Swift
+@objc open class SessionManagerDelegate : ObjectiveC.NSObject {
+  open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, Swift.Error?) -> Swift.Void)?
+  open var sessionDidReceiveChallengeWithCompletion: ((Foundation.URLSession, Foundation.URLAuthenticationChallenge, @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void) -> Swift.Void)?
+  open var sessionDidFinishEventsForBackgroundURLSession: ((Foundation.URLSession) -> Swift.Void)?
+  open var didCompleteWithError: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Error?) -> Swift.Void)?
+  open var didSendBodyData: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  open var downloadTaskDidResumeAtOffset: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  open var downloadTaskDidFinishDownloadingToURL: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Foundation.URL) -> Swift.Void)?
+  open var downloadTaskDidWriteData: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  public var resumeData: Foundation.Data?
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension SessionManagerDelegate : Foundation.URLSessionDelegate {
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: Swift.Error?)
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc dynamic public func urlSessionDidFinishEvents(forBackgroundURLSession session: Foundation.URLSession)
+}
+extension SessionManagerDelegate : Foundation.URLSessionTaskDelegate {
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
+}
+extension SessionManagerDelegate : Foundation.URLSessionDataDelegate {
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
+}
+extension SessionManagerDelegate : Foundation.URLSessionDownloadDelegate {
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
+}
+public typealias Parameters = [Swift.String : Any]
+public typealias Headers = [Swift.String : Swift.String]
+public class LACoreNetwork : LACoreNetwork.DefaultRequest {
+  public var gamelanAdapter: LACoreNetwork.GamelanAdapter?
+  public var session: Foundation.URLSession {
+    get
+    set(newValue)
+  }
+  public var request: Foundation.NSMutableURLRequest? {
+    get
+    set(newValue)
+  }
+  public var dataTask: Foundation.URLSessionDataTask? {
+    get
+    set(newValue)
+  }
+  public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.default)
+  public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.default, delegate: Foundation.URLSessionDelegate, queue: Foundation.OperationQueue? = nil)
+  public func encoding(urlString: Swift.String, aUrl: Foundation.URL, encoding: LACoreNetwork.JSONEncoding, parameters: LACoreNetwork.Parameters?)
+  @objc deinit
+}
+extension LACoreNetwork : LACoreNetwork.Request {
+  public func performRequest(url: Swift.String, method: LACoreNetwork.HttpMethod? = .Get, encoding: LACoreNetwork.JSONEncoding? = .default, headers: LACoreNetwork.Headers? = nil, parameters: LACoreNetwork.Parameters? = nil, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void)
+  public func cancelRequest()
+}
+extension LACoreNetwork : LACoreNetwork.UploadRequest {
+  public func performUpload(url: Swift.String, headers: LACoreNetwork.Headers? = nil, parameters: LACoreNetwork.Parameters? = nil, data: Foundation.Data?, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void)
+  public func generateBoundaryString() -> Swift.String
+  public func createBodyWithParameters(parameters: [Swift.String : Swift.String]?, filePathKey: Swift.String?, data: Foundation.Data, boundary: Swift.String) -> Foundation.Data
+}
+extension LACoreNetwork : LACoreNetwork.DownloadRequest {
+  public var downloadTask: Foundation.URLSessionDownloadTask? {
+    get
+    set(newValue)
+  }
+  public var resumeData: Foundation.Data? {
+    get
+    set(newValue)
+  }
+  public func performDownloadFile(url: Swift.String, headers: LACoreNetwork.Headers? = nil)
+  public func resumeDownload()
+  public func cancelDownload()
+  public func pauseDownload()
+}
+public enum JSONEncoding {
+  case `default`
+  case queryString
+  public static func == (a: LACoreNetwork.JSONEncoding, b: LACoreNetwork.JSONEncoding) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum HttpMethod : Swift.String {
+  case Get
+  case Post
+  case Delete
+  case Put
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol GamelanAdapter {
+  func adapter(_ urlRequest: Foundation.URLRequest) throws -> Foundation.URLRequest
+}
+public protocol DefaultRequest {
+  var session: Foundation.URLSession { get set }
+  var request: Foundation.NSMutableURLRequest? { get set }
+  var gamelanAdapter: LACoreNetwork.GamelanAdapter? { get set }
+  var dataTask: Foundation.URLSessionDataTask? { get set }
+  func encoding(urlString: Swift.String, aUrl: Foundation.URL, encoding: LACoreNetwork.JSONEncoding, parameters: LACoreNetwork.Parameters?)
+}
+public protocol Request {
+  func performRequest(url: Swift.String, method: LACoreNetwork.HttpMethod?, encoding: LACoreNetwork.JSONEncoding?, headers: LACoreNetwork.Headers?, parameters: LACoreNetwork.Parameters?, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void)
+  func cancelRequest()
+}
+public protocol UploadRequest {
+  func performUpload(url: Swift.String, headers: LACoreNetwork.Headers?, parameters: LACoreNetwork.Parameters?, data: Foundation.Data?, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void)
+  func generateBoundaryString() -> Swift.String
+  func createBodyWithParameters(parameters: [Swift.String : Swift.String]?, filePathKey: Swift.String?, data: Foundation.Data, boundary: Swift.String) -> Foundation.Data
+}
+public protocol DownloadRequest {
+  var downloadTask: Foundation.URLSessionDownloadTask? { get set }
+  var resumeData: Foundation.Data? { get set }
+  func performDownloadFile(url: Swift.String, headers: LACoreNetwork.Headers?)
+  func resumeDownload()
+  func cancelDownload()
+  func pauseDownload()
+}
+extension NSError {
+  public static func createWithLocalizedDesription(withCode code: Swift.Int = 204, localizedDescription: Swift.String) -> Foundation.NSError
+  public static var NoInternet: Foundation.NSError {
+    get
+  }
+  public static var InProgressUpdateSambel: Foundation.NSError {
+    get
+  }
+  public static var ModeMaintenace: Foundation.NSError {
+    get
+  }
+  public static var Telat: Foundation.NSError {
+    get
+  }
+  public static var MainBola: Foundation.NSError {
+    get
+  }
+  public static var ForceUpdate: Foundation.NSError {
+    get
+  }
+  public static var ToBeContinued: Foundation.NSError {
+    get
+  }
+  public static var Unknown: Foundation.NSError {
+    get
+  }
+  public static var AntBlocked: Foundation.NSError {
+    get
+  }
+  public static var ParsingError: Foundation.NSError {
+    get
+  }
+}
